@@ -30,6 +30,15 @@ const getAllDivision = () =>{
 const getDivisionByDistrict = () =>{
   return 'Select  div_id, div_code, div_name, dist_code, zone_code from division_master WHERE dist_code = $1'
 }
+// get division
+
+
+const getRoadByDistrict = () =>{
+  return 'Select   dist_code, road_code, road_name from road_master WHERE dist_code = $1'
+}
+const getRoadByDivision = () =>{
+  return 'Select  div_code, road_code, road_name from road_master WHERE div_code = $1'
+}
 
 module.exports = {
   getAllDistricts,
@@ -38,5 +47,7 @@ module.exports = {
   getCircles,
   getDistrictByCircleCode,
   getAllDivision,
-  getDivisionByDistrict
+  getDivisionByDistrict,
+  getRoadByDistrict,
+  getRoadByDivision
 };

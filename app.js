@@ -5,7 +5,7 @@ const circleMaster = require('./routes/circleMasterRoutes'); // Circle master ro
 const roads = require('./routes/routes');
 const editRoadRouter = require('./routes/editRoad');
 const reportRouter = require('./routes/report');
-
+const roadWidening = require('./routes/roadWidening');
  
 
 
@@ -22,11 +22,12 @@ app.use(cors()); // Ye line sabhi origins se requests ko allow karegi
 // Middleware
 app.use(express.json()); // To parse JSON request bodies
 
-// Routes
+// Routes 
 app.use('/api', roads);
 app.use('/api/circle', circleMaster);
 app.use('/api/getRoad', editRoadRouter);
 app.use('/api/reports', reportRouter);
+app.use('/api/widening', roadWidening);
  
 
 // Start server 
